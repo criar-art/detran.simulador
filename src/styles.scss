@@ -21,26 +21,26 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$simulador-detran-primary: mat.define-palette(mat.$light-blue-palette);
-$simulador-detran-accent: mat.define-palette(mat.$green-palette, A200, A100, A400);
+$detran-simuadlor-primary: mat.define-palette(mat.$light-blue-palette);
+$detran-simuadlor-accent: mat.define-palette(mat.$green-palette, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
-$simulador-detran-warn: mat.define-palette(mat.$red-palette);
+$detran-simuadlor-warn: mat.define-palette(mat.$red-palette);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$simulador-detran-theme: mat.define-light-theme((
+$detran-simuadlor-theme: mat.define-light-theme((
   color: (
-    primary: $simulador-detran-primary,
-    accent: $simulador-detran-accent,
-    warn: $simulador-detran-warn,
+    primary: $detran-simuadlor-primary,
+    accent: $detran-simuadlor-accent,
+    warn: $detran-simuadlor-warn,
   )
 ));
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include mat.all-legacy-component-themes($simulador-detran-theme);
+@include mat.all-legacy-component-themes($detran-simuadlor-theme);
 
 ::selection {
   background: #222;
