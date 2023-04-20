@@ -1,0 +1,82 @@
+<button
+  mat-icon-button
+  class="btn-menu"
+  aria-label="Botão para abrir o menu de navegação"
+  (click)="onMenu()"
+>
+  <mat-icon *ngIf="!statusMenu">menu</mat-icon>
+  <mat-icon *ngIf="statusMenu">close</mat-icon>
+</button>
+<!-- <div class="backdrop" (click)="onMenu()" [class.active]="statusMenu"></div> -->
+<section class="navigation" [class.active]="statusMenu">
+  <nav (click)="onMenu()">
+    <a
+      class="link"
+      [routerLink]="['']"
+      routerLinkActive="active-link"
+      [routerLinkActiveOptions]="{exact:true}">
+      <mat-icon>home</mat-icon>
+      Início
+    </a>
+    <a
+      class="link"
+      [routerLink]="['placas']"
+      routerLinkActive="active-link"
+      [routerLinkActiveOptions]="{exact:true}">
+      <mat-icon>directions</mat-icon>
+      Placas
+    </a>
+    <a
+      class="link"
+      [routerLink]="['detran']"
+      routerLinkActive="active-link"
+      [routerLinkActiveOptions]="{exact:true}">
+      <mat-icon>format_list_bulleted</mat-icon>
+      Lista Detran
+    </a>
+    <a
+      class="link"
+      [routerLink]="['teste', '1']"
+      routerLinkActive="active-link"
+      [routerLinkActiveOptions]="{exact:true}">
+      <mat-icon>looks_one</mat-icon>
+      Teste Simples
+    </a>
+     <a
+      class="link"
+      [routerLink]="['teste', '2']"
+      routerLinkActive="active-link"
+      [routerLinkActiveOptions]="{exact:true}">
+      <mat-icon>looks_two</mat-icon>
+      Teste Médio
+    </a>
+    <a
+      class="link"
+      [routerLink]="['teste', '3']"
+      routerLinkActive="active-link"
+      [routerLinkActiveOptions]="{exact:true}">
+      <mat-icon>looks_3</mat-icon>
+      Teste Avançado
+    </a>
+    <a
+      class="link"
+      [routerLink]="['info']"
+      routerLinkActive="active-link"
+      [routerLinkActiveOptions]="{exact:true}">
+      <mat-icon>help_center</mat-icon>
+      Informações
+    </a>
+    <a
+      class="link"
+      [routerLink]="['doe']"
+      routerLinkActive="active-link"
+      [routerLinkActiveOptions]="{exact:true}">
+      <mat-icon>volunteer_activism</mat-icon>
+      Doações
+    </a>
+    <p class="version">
+      <mat-icon>code</mat-icon>
+      <span>Versão: {{ this.appVersion }}</span>
+    </p>
+  </nav>
+</section>

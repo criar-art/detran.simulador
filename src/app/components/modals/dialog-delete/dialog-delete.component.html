@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>Realmente deseja excluir?</h1>
+<div mat-dialog-content>
+  Essa ação não pode ser desfeita
+</div>
+<div mat-dialog-actions align="center">
+  <button mat-raised-button mat-dialog-close color="warn">Não</button>
+  <button mat-raised-button [mat-dialog-close]="true" cdkFocusInitial color="accent">Sim</button>
+</div>

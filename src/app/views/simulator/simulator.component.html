@@ -1,0 +1,81 @@
+<div class="content">
+  <h1>Teste nível {{ this.level }}</h1>
+
+  <ng-template [ngIf]="!loading && !start">
+    <mat-form-field appearance="fill" class="w-full">
+      <mat-label>Como você deseja ser chamado?</mat-label>
+      <input id="name" matInput [(ngModel)]="name" (input)="nameEncode()" maxlength="15">
+    </mat-form-field>
+
+    <button
+      mat-button
+      class="btn-start w-full"
+      aria-label="Botão para iniciar o teste"
+      (click)="openDialogStart()"
+      *ngIf="name"
+    >
+      <mat-icon>play_circle</mat-icon>
+      <span>Iniciar teste {{ this.level }} {{ this.result_show && 'novamente' }} {{name ? '- ' : ''}}{{name}}</span>
+    </button>
+  </ng-template>
+
+  <ng-template [ngIf]="!loading && start">
+    <section *ngFor="let question of questions; let index = index;">
+      <mat-card *ngIf="question.show">
+        <mat-card-title class="question">{{ this.question.ask }}</mat-card-title>
+        <img *ngIf="question.photo" class="photo" mat-card-xl-image [src]="question.photo" >
+        <mat-card-subtitle>Escolhe uma opção</mat-card-subtitle>
+        <mat-radio-group
+          aria-labelledby="exam-radio-group-label"
+          class="exam-radio-group"
+          [(ngModel)]="reactChoice"
+        >
+          <mat-radio-button class="exam-radio-button w-full" *ngFor="let react of reacts" [value]="react.value">
+            {{react.choice}}
+          </mat-radio-button>
+          <mat-radio-button class="exam-radio-button w-full" value="vazio">
+            Não sei
+          </mat-radio-button>
+        </mat-radio-group>
+        <mat-card-actions *ngIf="reactChoice">
+          <button mat-raised-button class="mat-accent w-full" aria-label="Botão para seguir" (click)="nextAsk(index)">
+            {{ questions.length == index + 1 ? 'Finalizar' : 'Próxima' }}
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </section>
+  </ng-template>
+
+  <ng-template [ngIf]="!loading && !start && end && result">
+    <mat-card style="margin-top: 1rem;">
+      <mat-card-title style="margin-bottom: 1rem">Resultado do seu teste {{name}}</mat-card-title>
+      <p>Você acertou um total de <span [class.motivation]="result_correct > 3">{{ result_correct }}</span></p>
+      <p
+        *ngFor="let item of result_show; let index = index"
+        class="item-question"
+        [class.item-wrong]="item !== 'lucas'"
+        [class.item-correct]="item === 'lucas'"
+      >
+        <span>
+          <b>{{ questions[index].ask }} </b>
+          <br>
+          <img *ngIf="questions[index].photo" class="photo" mat-card-xl-image [src]="questions[index].photo" >
+          <br>
+          <span>
+            Resposta: {{ askReturn(questions[index]) }}
+          </span>
+        </span>
+        <br>
+        <span *ngIf="item !== 'lucas'" [class.wrong]="item !== 'lucas'">Errou!</span>
+        <span *ngIf="item === 'lucas'" [class.correct]="item === 'lucas'">Acertou, Parabéns!</span>
+      </p>
+      <mat-card-actions style="text-align: right;">
+        <button mat-stroked-button color="warn" class="w-full" aria-label="Botão para excluir o teste!" (click)="openDialogDelete()">Excluir esse teste!</button>
+      </mat-card-actions>
+    </mat-card>
+  </ng-template>
+
+  <ng-template [ngIf]="loading">
+    <mat-spinner></mat-spinner>
+  </ng-template>
+</div>

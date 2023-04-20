@@ -1,0 +1,11 @@
+<div class="content">
+  <h2>Lista completa do Detran de cada Estado do Brasil</h2>
+  <hr>
+  <section class="detran">
+    <ul>
+      <li *ngFor="let state of states">
+        <a class="detran-link" [href]="state.url" target="_blank">{{ state.name }}</a>
+      </li>
+    </ul>
+  </section>
+</div>

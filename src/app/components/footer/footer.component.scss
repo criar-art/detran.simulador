@@ -1,0 +1,23 @@
+:host {
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  padding: 3.3rem 1rem;
+  margin-top: auto;
+  @media (max-width: 765px) {
+    background: #222 url('../../../assets/background/brasil-pista.jpg') no-repeat;
+    background-size: cover;
+    background-position: center top;
+  }
+  strong {
+    background: #222;
+    border-radius: 10px;
+    border: 2px solid rgba(255,255,255,.4);
+    font-weight: normal;
+    padding: .5rem;
+  }
+  a {
+    color: #ffe44a;
+    text-decoration: none;
+  }
+}

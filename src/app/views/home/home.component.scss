@@ -1,0 +1,27 @@
+:host {
+  .like, .link {
+    background: #fff;
+    border-radius: 10px;
+    color: #222;
+    display: inline-flex;
+    margin: 1rem;
+    padding: 1rem;
+    text-decoration: none;
+    align-items: center;
+    &:hover,
+    &.active-link {
+      background: #ffe44a;
+      color: #222;
+    }
+    .mat-icon { margin-right: .5rem; }
+  }
+  .like {
+    overflow: hidden;
+    padding: 0 1rem;
+    &:hover,
+    &.active-link {
+      background: #fff;
+      color: #222;
+    }
+  }
+}

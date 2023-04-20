@@ -1,0 +1,21 @@
+<h2>Placas</h2>
+<mat-tab-group class="signal-content" mat-align-tabs="start">
+  <mat-tab [label]="item.title" *ngFor="let item of signals">
+    <section class="signal">
+      <mat-card class="card" *ngFor="let signal of item.list">
+        <mat-card-title-group align="center">
+          <mat-card-title class="title">{{ signal.title }}</mat-card-title>
+          <mat-card-subtitle class="subtitle">{{ signal.subtitle }}</mat-card-subtitle>
+        </mat-card-title-group>
+        <mat-card-content>
+          <img
+            mat-card-md-image
+            [src]="'../../../assets/signal/' + signal.photo"
+            [alt]="signal.subtitle + ' ' + signal.title"
+          >
+          <p class="description">{{ signal.description }}</p>
+        </mat-card-content>
+      </mat-card>
+    </section>
+  </mat-tab>
+</mat-tab-group>

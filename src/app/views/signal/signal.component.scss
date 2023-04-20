@@ -1,0 +1,35 @@
+:host {
+  width: 100%;
+}
+
+.signal-content {
+  margin: 0 -2rem;
+  max-width: calc(100% + 4rem);
+  @media (max-width: 400px) {
+    margin: 0 -1rem;
+    max-width: calc(100% + 4rem);
+  }
+}
+
+.signal {
+  padding: 1rem;
+  column-gap: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  row-gap: 10px;
+  @media (max-width: 650px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  text-align: center;
+  .mat-card-title-group {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+  img { margin-bottom: 1rem; }
+  .description { white-space: pre-wrap; }
+}
