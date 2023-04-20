@@ -3,7 +3,7 @@
 This social project aims to help you prepare for a test with questions about Brazilian traffic laws<br />
 Idealized to organize a practical test of questions generating a result of the answer after finishing the tests<br />
 Constructed in a simple way to reach every Brazilian citizen and help in your moment of preparation<br />
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.4.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.6.
 
 ## Development server
 
@@ -39,4 +39,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 #### 你能谈谈这个项目吗？
 
 * :ghost: @lucasferreiralimax
-* :email: lucasferreiralimax@gmail.com
+* :email: contato@criar.art
